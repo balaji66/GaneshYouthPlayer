@@ -1,0 +1,20 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="CustomActionBarTheme"
+        parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+        <!-- Support library compatibility -->
+        <item name="android:textColorHint">@color/colorWhite</item>
+        <item name="colorControlActivated">@color/colorBlue</item>
+        <item name="actionBarStyle">@style/MyActionBar</item>
+    </style>
+    <!-- ActionBar styles -->
+    <style name="MyActionBar"
+        parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@drawable/ic_background</item>
+        <!-- Support library compatibility -->
+        <item name="background">@drawable/ic_background</item>
+    </style>
+
+</resources>

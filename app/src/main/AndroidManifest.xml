@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.durga.balaji66.ganeshyouthplayer">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/CustomActionBarTheme">
+        <activity
+            android:name=".SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/player_login"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".GamesListActivity"
+            android:label="List Of Games"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RegisterActivity"
+            android:label="@string/new_player_registration"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ForgotPasswordActivity"
+            android:label="@string/reset_password"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ArrangingAnxietyActivity"
+            android:label="@string/arranging_anxiety"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".BalloonActivity"
+            android:label="@string/carring_balloon"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".BubbleActivity"
+            android:label="@string/carrying_bubble"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

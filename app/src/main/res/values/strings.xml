@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Ganesh Youth Player</string>
+    <string name="login">Login</string>
+    <string name="enter_phone_number">Enter Registered Phone Number</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="new_register"><u>New Register</u></string>
+    <string name="forgot_password"><u>Forgot Password</u></string>
+    <string name="player_login">Player LogIn</string>
+    <string name="new_player_registration">New Player Register</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="arranging_anxiety">Arranging Anxiety</string>
+    <string name="carrying_balloon">Carrying Balloon</string>
+    <string name="carrying_bubble">Carrying Bubble</string>
+    <string name="carring_balloon">Carrying Balloon</string>
+    <string name="desc_bubble">Management will provide small bubbles and straw. By using straw you have to carry the bubble and place it in the cup. Distance and Time will be decided by the management. Who will Collect the more bubbles with in the time, that person is the final winner.</string>
+    <string name="register">Register</string>
+    <string name="desc_anxiety">You people have to arrange all the letters in the correct places. There is not time limit for this game. Who will arrange in less time, that person is the final winner. </string>
+    <string name="desc_balloon">You People have to carry the balloon without touching with hands and without falling down. Once balloon fall down or blasted you have to start from the starting line. In this game 2 participants needed. Before participating you have to select one partner.</string>
+    <string name="enter_first_name">Enter First Name</string>
+    <string name="enter_last_name">Enter SurName</string>
+    <string name="enter_father_name">Enter Father\'s Name</string>
+    <string name="enter_mobile_number">Enter Mobile Number</string>
+    <string name="enter_confirm_password">Enter Confirm Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="logout">logout</string>
+    <string name="registered_games">About</string>
+    <string name="player_name">Player Name</string>
+    <string name="father_name">Father Name</string>
+    <string name="game_name">Game Name</string>
+
+</resources>
