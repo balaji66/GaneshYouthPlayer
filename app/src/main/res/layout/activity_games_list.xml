@@ -5,61 +5,63 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/ic_background"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:background="@color/colorWhite"
     tools:context=".GamesListActivity">
-
-    <LinearLayout
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="40dp"
-        android:layout_height="match_parent">
-        <Button
-            android:id="@+id/buttonAnxiety"
+        app:cardCornerRadius="@dimen/dimen_10dp"
+        android:background="@color/colorWhite"
+        android:layout_margin="@dimen/dimen_20dp"
+        android:layout_height="wrap_content">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:textAllCaps="false"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/selectorbutton"
-            android:textAlignment="center"
-            android:layout_marginBottom="30dp"
-            android:text="@string/arranging_anxiety"/>
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_marginTop="@dimen/dimen_20dp"
+                android:id="@+id/buttonAnxiety"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:textAllCaps="true"
+                android:textColor="@color/colorWhite"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/selectorbutton"
+                android:textAlignment="center"
+                android:layout_marginBottom="30dp"
+                android:text="@string/arranging_anxiety"/>
 
-        <Button
-            android:id="@+id/buttonBalloon"
-            android:textSize="25sp"
-            android:textAllCaps="false"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="30dp"
-            android:background="@drawable/selectorbutton"
-            android:textAlignment="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/carrying_balloon"/>
-
-        <Button
-            android:id="@+id/buttonBubble"
-            android:textSize="25sp"
-            android:textAllCaps="false"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/selectorbutton"
-            android:textAlignment="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/carrying_bubble"/>
-
-
-
-
-    </LinearLayout>
-
-
+            <Button
+                android:id="@+id/buttonBalloon"
+                android:textSize="25sp"
+                android:textColor="@color/colorWhite"
+                android:textAllCaps="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/selectorbutton"
+                android:textAlignment="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/carrying_balloon"/>
+            <Button
+                android:layout_marginBottom="@dimen/dimen_20dp"
+                android:id="@+id/buttonBubble"
+                android:textSize="25sp"
+                android:textColor="@color/colorWhite"
+                android:textAllCaps="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/selectorbutton"
+                android:textAlignment="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/carrying_bubble"/>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
 </LinearLayout>

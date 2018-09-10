@@ -1,16 +1,18 @@
 package com.durga.balaji66.ganeshyouthplayer;
 
-import android.Manifest;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Build;
+import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -24,10 +26,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 import static android.Manifest.permission.INTERNET;
-import static android.Manifest.permission.RECEIVE_SMS;
-import static android.Manifest.permission.SEND_SMS;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -37,7 +36,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private TextView mForgotPassword;
     private static final int PERMISSION_REQUEST_CODE = 200;
 
-
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,15 +53,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
 
     }
+
     private boolean checkPermission() {
         int result = ContextCompat.checkSelfPermission(getApplicationContext(), INTERNET);
         return result == PackageManager.PERMISSION_GRANTED;
     }
+
     private void requestPermission() {
         ActivityCompat.requestPermissions(this, new String[]{INTERNET}, PERMISSION_REQUEST_CODE);
 
     }
-
 
     public void startHomeActivity() {
         Intent accountsIntent = new Intent(LoginActivity.this, GamesListActivity.class);
@@ -70,16 +70,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         startActivity(accountsIntent);
         finish();
     }
-    public void initializeViews()
-    {
-        mPhoneNumber =(TextInputEditText)findViewById(R.id.textInputEditTextPhone);
-        mPassword    =(TextInputEditText)findViewById(R.id.textInputEditTextPassword);
-        mSignIn      =(Button)findViewById(R.id.buttonLogin);
-        mNewRegister =(TextView)findViewById(R.id.textViewNewRegister);
-        mForgotPassword =(TextView)findViewById(R.id.textViewForgotPassword);
+
+    public void initializeViews() {
+        mPhoneNumber = findViewById(R.id.textInputEditTextPhone);
+        mPassword = findViewById(R.id.textInputEditTextPassword);
+        mSignIn = findViewById(R.id.buttonLogin);
+        mNewRegister = findViewById(R.id.textViewNewRegister);
+        mForgotPassword = findViewById(R.id.textViewForgotPassword);
     }
-    public void initializeListeners()
-    {
+
+    public void initializeListeners() {
         mSignIn.setOnClickListener(this);
         mNewRegister.setOnClickListener(this);
         mForgotPassword.setOnClickListener(this);
@@ -88,51 +88,40 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
 
-        switch (v.getId())
-        {
+        switch (v.getId()) {
             case R.id.buttonLogin:
-                if(inputValidation())
-                {
-                 signIn();
+                if (inputValidation()) {
+                    signIn();
                 }
                 break;
             case R.id.textViewNewRegister:
-                Intent intentRegisterActivity = new Intent(LoginActivity.this,RegisterActivity.class);
+                Intent intentRegisterActivity = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(intentRegisterActivity);
                 finish();
                 break;
 
             case R.id.textViewForgotPassword:
-                Intent intentForgotPasswordActivity = new Intent(LoginActivity.this,ForgotPasswordActivity.class);
+                Intent intentForgotPasswordActivity = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
                 startActivity(intentForgotPasswordActivity);
                 break;
         }
     }
 
-    public boolean inputValidation()
-    {
-        if(mPhoneNumber.getText().toString().equals(""))
-        {
+    public boolean inputValidation() {
+        if (mPhoneNumber.getText().toString().equals("")) {
             mPhoneNumber.setError("Mobile Number Must Not Be Empty");
-        }
-        else if(mPhoneNumber.getText().toString().length() > 10 || mPhoneNumber.getText().toString().length() <10 )
-        {
+        } else if (mPhoneNumber.getText().toString().length() > 10 || mPhoneNumber.getText().toString().length() < 10) {
             mPhoneNumber.setError("Enter Valid 10 digit Mobile Number");
-        }
-        else if(mPassword.getText().toString().equals(""))
-        {
+        } else if (mPassword.getText().toString().equals("")) {
             mPassword.setError("Password Must Not be Empty");
-        }
-        else
-        {
+        } else {
             return true;
         }
         return false;
 
     }
 
-    public void signIn()
-    {
+    public void signIn() {
         final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Signing Up...");
         progressDialog.setCancelable(false);
@@ -145,30 +134,25 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         call.enqueue(new Callback<ResponseBody>() {
             @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+            public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
 
-                if(response.code() == 200)
-                {
+                if (response.code() == 200) {
                     progressDialog.dismiss();
                     attemptLoginActivity();
 
-                     }
-                else if( response.code() == 401)
-                {
+                } else if (response.code() == 401) {
                     progressDialog.dismiss();
-                    Toast.makeText(getApplicationContext(),"Invalid Mobile Number or password",Toast.LENGTH_LONG).show();
-                }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Please Check After Some Time",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Invalid Mobile Number or password", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), "Please Check After Some Time", Toast.LENGTH_LONG).show();
 
                 }
             }
 
             @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
+            public void onFailure(@NonNull Call<ResponseBody> call, @NonNull Throwable t) {
                 progressDialog.dismiss();
-                final AlertDialog alertDialog =new AlertDialog.Builder(LoginActivity.this).create();
+                final AlertDialog alertDialog = new AlertDialog.Builder(LoginActivity.this).create();
                 alertDialog.setTitle("No Internet");
                 alertDialog.requestWindowFeature(Window.FEATURE_LEFT_ICON);
                 alertDialog.setIcon(R.drawable.ic_no_internet);
@@ -181,7 +165,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     }
                 });
                 alertDialog.show();
-                Toast.makeText(getApplicationContext(),"Check Your Internet Connection",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Check Your Internet Connection", Toast.LENGTH_LONG).show();
                 //Toast.makeText(getApplicationContext(),t.getMessage(),Toast.LENGTH_LONG).show();
             }
         });
@@ -193,6 +177,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         saveLoginDetails(email, password);
         startHomeActivity();
     }
+
     public void saveLoginDetails(String email, String password) {
         new UserPerfManager(this).saveLoginDetails(email, password);
     }

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 public class UserPerfManager {
-    Context mContext;
+   private Context mContext;
 
     UserPerfManager(Context context) {
         this.mContext = context;

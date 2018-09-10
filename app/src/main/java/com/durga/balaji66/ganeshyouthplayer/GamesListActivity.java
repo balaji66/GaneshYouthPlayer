@@ -2,16 +2,13 @@ package com.durga.balaji66.ganeshyouthplayer;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-
-import java.util.zip.Inflater;
 
 public class GamesListActivity extends AppCompatActivity  implements View.OnClickListener{
 
@@ -26,9 +23,9 @@ public class GamesListActivity extends AppCompatActivity  implements View.OnClic
 
     public void initializeViews()
     {
-        mAnxiety =(Button)findViewById(R.id.buttonAnxiety);
-        mBalloon =(Button)findViewById(R.id.buttonBalloon);
-        mBubble  =(Button)findViewById(R.id.buttonBubble);
+        mAnxiety = findViewById(R.id.buttonAnxiety);
+        mBalloon = findViewById(R.id.buttonBalloon);
+        mBubble  = findViewById(R.id.buttonBubble);
     }
 
     public void initializeListeners()

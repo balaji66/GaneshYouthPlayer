@@ -5,182 +5,144 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/ic_background"
+    android:background="#FFFFFF"
     tools:context=".RegisterActivity">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
         <LinearLayout
             android:layout_width="match_parent"
             android:orientation="vertical"
+            android:background="@color/colorWhite"
             android:layout_height="wrap_content">
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                app:cardCornerRadius="20dp"
                 android:layout_gravity="center"
+                android:background="@color/colorWhite"
                 android:layout_marginRight="@dimen/dimen_20dp"
                 android:layout_marginLeft="@dimen/dimen_20dp"
                 android:layout_marginBottom="@dimen/dimen_20dp"
                 android:layout_marginTop="@dimen/dimen_20dp"
                 android:layout_height="match_parent">
                 <LinearLayout
+                    android:background="@color/colorWhite"
                     android:layout_width="match_parent"
                     android:orientation="vertical"
-                    android:background="@drawable/ic_background"
                     android:layout_height="wrap_content">
-                    <TextView
-                        android:layout_marginTop="@dimen/dimen_20dp"
-                        android:layout_width="wrap_content"
-                        android:textSize="@dimen/dimen_20sp"
-                        android:text="@string/enter_first_name"
-                        android:layout_height="wrap_content" />
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/dimen_10dp"
+                        android:textColorHint="@color/colorPrimary"
+                        android:hint="@string/enter_first_name"
                         android:layout_marginBottom="@dimen/dimen_10dp"
                         android:layout_height="wrap_content">
-                        <EditText
+                        <android.support.design.widget.TextInputEditText
                             android:layout_width="match_parent"
-                            android:paddingLeft="@dimen/dimen_10dp"
+                            android:paddingStart="@dimen/dimen_10dp"
                             android:inputType="text"
                             android:lines="1"
-                            android:layout_marginStart="@dimen/dimen_10dp"
-                            android:layout_marginEnd="@dimen/dimen_10dp"
-                            android:background="@drawable/background_edit_text"
-                            android:paddingTop="@dimen/dimen_5dp"
-                            android:paddingBottom="@dimen/dimen_5dp"
+                            android:maxLength="30"
                             android:layout_height="wrap_content"
                             android:id="@+id/editTextFirstName"
-                            />
+                            tools:ignore="RtlSymmetry" />
                     </android.support.design.widget.TextInputLayout>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:textSize="@dimen/dimen_20sp"
-                        android:text="@string/enter_last_name"
-                        android:layout_height="wrap_content" />
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
+                        android:hint="@string/enter_last_name"
+                        android:textColorHint="@color/colorPrimary"
                         android:layout_marginBottom="@dimen/dimen_10dp"
                         android:layout_height="wrap_content">
-                        <EditText
-                            android:layout_marginStart="@dimen/dimen_10dp"
-                            android:layout_marginEnd="@dimen/dimen_10dp"
+                        <android.support.design.widget.TextInputEditText
                             android:layout_width="match_parent"
-                            android:paddingLeft="@dimen/dimen_10dp"
+                            android:paddingStart="@dimen/dimen_10dp"
                             android:inputType="text"
                             android:lines="1"
-                            android:background="@drawable/background_edit_text"
-                            android:paddingTop="@dimen/dimen_5dp"
-                            android:paddingBottom="@dimen/dimen_5dp"
+                            android:maxLength="30"
                             android:layout_height="wrap_content"
-                            android:id="@+id/editTextLastName"/>
+                            android:id="@+id/editTextLastName"
+                            tools:ignore="RtlSymmetry" />
                     </android.support.design.widget.TextInputLayout>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:textSize="@dimen/dimen_20sp"
-                        android:text="@string/enter_father_name"
-                        android:layout_height="wrap_content" />
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
+                        android:hint="@string/enter_father_name"
+                        android:textColorHint="@color/colorPrimary"
                         android:layout_marginBottom="@dimen/dimen_10dp"
                         android:layout_height="wrap_content">
-                        <EditText
-                            android:layout_marginStart="@dimen/dimen_10dp"
-                            android:layout_marginEnd="@dimen/dimen_10dp"
+                        <android.support.design.widget.TextInputEditText
                             android:layout_width="match_parent"
-                            android:paddingLeft="@dimen/dimen_10dp"
+                            android:paddingStart="@dimen/dimen_10dp"
                             android:inputType="text"
                             android:lines="1"
-                            android:background="@drawable/background_edit_text"
-                            android:paddingTop="@dimen/dimen_5dp"
-                            android:paddingBottom="@dimen/dimen_5dp"
+                            android:maxLength="30"
                             android:layout_height="wrap_content"
-                            android:id="@+id/editTextFatherName"/>
+                            android:id="@+id/editTextFatherName"
+                            tools:ignore="RtlSymmetry" />
                     </android.support.design.widget.TextInputLayout>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:textSize="@dimen/dimen_20sp"
-                        android:text="@string/enter_mobile_number"
-                        android:layout_height="wrap_content" />
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
+                        android:hint="@string/enter_mobile_number"
+                        android:textColorHint="@color/colorPrimary"
                         android:layout_marginBottom="@dimen/dimen_10dp"
                         android:layout_height="wrap_content">
-                        <EditText
-                            android:layout_marginStart="@dimen/dimen_10dp"
-                            android:layout_marginEnd="@dimen/dimen_10dp"
+                        <android.support.design.widget.TextInputEditText
                             android:layout_width="match_parent"
                             android:paddingStart="@dimen/dimen_10dp"
                             android:inputType="phone"
-                            android:background="@drawable/background_edit_text"
-                            android:paddingTop="@dimen/dimen_5dp"
-                            android:paddingBottom="@dimen/dimen_5dp"
+                            android:maxLength="10"
                             android:layout_height="wrap_content"
-                            android:id="@+id/editTextMobileNumber"/>
+                            android:id="@+id/editTextMobileNumber"
+                            tools:ignore="RtlSymmetry" />
                     </android.support.design.widget.TextInputLayout>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:textSize="@dimen/dimen_20sp"
-                        android:text="@string/enter_password"
-                        android:layout_height="wrap_content" />
+
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         app:passwordToggleEnabled="true"
+                        android:hint="@string/enter_password"
+                        app:passwordToggleTint="@color/colorPrimary"
+                        android:textColorHint="@color/colorPrimary"
                         android:layout_marginBottom="@dimen/dimen_10dp"
                         android:layout_height="wrap_content">
-                        <EditText
-                            android:layout_marginStart="@dimen/dimen_10dp"
-                            android:layout_marginEnd="@dimen/dimen_10dp"
+                        <android.support.design.widget.TextInputEditText
                             android:layout_width="match_parent"
                             android:paddingStart="@dimen/dimen_10dp"
                             android:inputType="textPassword"
-                            android:background="@drawable/background_edit_text"
-                            android:paddingTop="@dimen/dimen_5dp"
-                            android:paddingBottom="@dimen/dimen_5dp"
-                            android:layout_height="@dimen/dimen_35dp"
-                            android:id="@+id/editTextPassword"/>
+                            android:maxLength="10"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/editTextPassword"
+                            tools:ignore="RtlSymmetry" />
                     </android.support.design.widget.TextInputLayout>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:textSize="@dimen/dimen_20sp"
-                        android:text="@string/enter_confirm_password"
-                        android:layout_height="wrap_content" />
+
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
+                        android:textColorHint="@color/colorPrimary"
+                        app:passwordToggleTint="@color/colorPrimary"
+                        android:hint="@string/enter_confirm_password"
                         android:layout_marginBottom="@dimen/dimen_20dp"
                         app:passwordToggleEnabled="true"
                         android:layout_height="wrap_content">
-                        <EditText
-                            android:layout_marginStart="@dimen/dimen_10dp"
-                            android:layout_marginEnd="@dimen/dimen_10dp"
+                        <android.support.design.widget.TextInputEditText
                             android:layout_width="match_parent"
                             android:paddingStart="@dimen/dimen_10dp"
                             android:inputType="textPassword"
-                            android:background="@drawable/background_edit_text"
-                            android:paddingTop="@dimen/dimen_5dp"
-                            android:paddingBottom="@dimen/dimen_5dp"
-                            android:layout_height="@dimen/dimen_35dp"
-                            android:id="@+id/editTextConfirmPassword"/>
+                            android:maxLength="10"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/editTextConfirmPassword"
+                            tools:ignore="RtlSymmetry" />
                     </android.support.design.widget.TextInputLayout>
-
                     <Button
                         android:id="@+id/buttonSignUp"
+                        android:textColor="@color/colorWhite"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/dimen_40dp"
-                        android:layout_marginStart="@dimen/dimen_40dp"
+                        android:layout_marginEnd="@dimen/dimen_10dp"
+                        android:layout_marginStart="@dimen/dimen_10dp"
                         android:background="@drawable/selectorbutton"
                         android:layout_marginBottom="@dimen/dimen_20dp"
                         android:text="@string/sign_up"/>
-
-
                 </LinearLayout>
-
-
-
-
             </android.support.v7.widget.CardView>
-
         </LinearLayout>
 
     </ScrollView>

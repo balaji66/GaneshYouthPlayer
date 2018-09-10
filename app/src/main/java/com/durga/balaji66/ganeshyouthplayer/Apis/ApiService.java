@@ -16,8 +16,10 @@ public interface ApiService {
             @Field("candidate_name") String name,
             @Field("father_name") String email,
             @Field("mobile_number") String phone,
-            @Field("password") String password
-    );
+            @Field("password") String password,
+            @Field("register_date") String date
+
+            );
     @FormUrlEncoded
     @POST("candidateLogin")
     Call<ResponseBody> candidateLogin(
